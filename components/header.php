@@ -16,7 +16,7 @@
                 <a href="/" class="text-[20px] sm:text-[22px] font-bold text-neutral-900 tracking-tight hover:text-black transition-colors">
                     Saurabh Sharma
                 </a>
-                <span class="text-[16px] font-semibold tracking-[0.2em] text-[#8e1515] uppercase font-secondary">
+                <span class="text-[16px] font-semibold tracking-[0.25em] text-[#8e1515] uppercase font-secondary">
                     THE&nbsp;ADSURGEON
                 </span>
             </div>
