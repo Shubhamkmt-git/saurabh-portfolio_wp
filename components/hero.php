@@ -1,3 +1,10 @@
+<?php
+// hero.php
+if (!isset($theme_uri)) {
+    $theme_uri = function_exists('get_stylesheet_directory_uri') ? get_stylesheet_directory_uri() : '';
+}
+$asset_base = !empty($theme_uri) ? rtrim($theme_uri, '/') . '/' : '';
+?>
 <!-- Hero Component -->
 <section id="hero" class="relative pt-6 sm:pt-10 pb-16 w-[96%] max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
@@ -38,8 +45,10 @@
             <div class="flex flex-wrap items-center gap-4 sm:gap-5">
                 
                 <!-- Primary CTA Capsule -->
-                <a href="#contact" class="inline-flex items-center bg-[#111111] hover:bg-neutral-900 text-white rounded-full p-2 pl-2 pr-3.5 shadow-[0_8px_25px_rgba(0,0,0,0.35)] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group">
-                    <img src="assets/images/avatar.png" alt="Saurabh Sharma" class="w-10 h-10 rounded-full object-cover ring-1 ring-white/10" onerror="this.src='assets/images/hero-person.png'">
+                <a href="#contact" class="inline-flex items-center bg-[#111111] hover:bg-neutral-900 text-white rounded-full p-1 pl-1 pr-1.5 shadow-[0_8px_25px_rgba(0,0,0,0.35)] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group">
+                    <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-[#ebe7e1] ring-1 ring-white/10">
+                        <img src="<?= $asset_base ?>assets/images/avatar.jpg" alt="Saurabh Sharma" class="w-full h-full object-cover object-[center_20%]" onerror="this.onerror=null;this.src='<?= $asset_base ?>assets/images/avatar.png'">
+                    </div>
                     <span class="text-[14.5px] sm:text-[15px] font-medium text-white px-3.5 tracking-normal select-none">
                         Book a call with me
                     </span>
@@ -51,9 +60,9 @@
                 <!-- Happy Clients Soft 3D Capsule -->
                 <div class="inline-flex items-center gap-3.5 bg-white rounded-full py-2 px-3.5 sm:px-4 shadow-[0_6px_22px_rgba(0,0,0,0.06),0_2px_6px_rgba(0,0,0,0.03)] select-none">
                     <div class="flex items-center -space-x-2">
-                        <img src="assets/images/client-1.jpg" alt="Client" class="w-8 h-8 rounded-full object-cover ring-2 ring-white">
-                        <img src="assets/images/client-2.jpg" alt="Client" class="w-8 h-8 rounded-full object-cover ring-2 ring-white">
-                        <img src="assets/images/client-3.jpg" alt="Client" class="w-8 h-8 rounded-full object-cover ring-2 ring-white">
+                        <img src="<?= $asset_base ?>assets/images/client-1.jpg" alt="Client" class="w-8 h-8 rounded-full object-cover ring-2 ring-white">
+                        <img src="<?= $asset_base ?>assets/images/client-2.jpg" alt="Client" class="w-8 h-8 rounded-full object-cover ring-2 ring-white">
+                        <img src="<?= $asset_base ?>assets/images/client-3.jpg" alt="Client" class="w-8 h-8 rounded-full object-cover ring-2 ring-white">
                         <span class="w-8 h-8 rounded-full bg-[#181818] text-white text-[11px] font-bold flex items-center justify-center ring-2 ring-white">+95</span>
                     </div>
                     <div class="text-left pr-1.5">
@@ -93,10 +102,11 @@
 
             <!-- Central Hero Portrait -->
             <div class="relative w-full max-w-[430px] sm:max-w-[480px] z-10 flex justify-center">
-                <img src="assets/images/saurabh-hero.png" 
+                <img src="<?= $asset_base ?>assets/images/saurabh-hero.png" 
                      alt="Saurabh Sharma — Performance Marketer & Adsurgeon" 
                      class="w-full h-auto object-contain select-none transition-transform duration-500 hover:scale-[1.01]"
-                     loading="eager">
+                     loading="eager"
+                     onerror="this.onerror=null;this.src='<?= $asset_base ?>assets/images/hero-person.png'">
             </div>
 
             <!-- Floating Card 1: Ad Spend Managed (Top Left) -->
